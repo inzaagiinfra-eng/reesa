@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom"
+import { IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 
 
 const WHATSNEW = [
@@ -93,7 +95,7 @@ const CUSTOMERCARE = [
     {
         id: 1,
         title: "Contact",
-        link: "/",
+        link: "/contact",
     },
     {
         id: 2,
@@ -148,7 +150,7 @@ const Footer = () => {
         { title: "CORPORATE", data: CORPORATE }
     ]
     return (
-        <div className='bg-gray-950'>
+        <div className='bg-gray-950 py-6'>
             <div className='max-md:hidden'>
 
                 <div className='app-container flex gap-12  justify-center '>
@@ -180,17 +182,22 @@ const Footer = () => {
                         <div key={idx} className='flex py-2 flex-col'>
                             <button
                                 onClick={() => setOpen(open === idx ? null : idx)}
-                                className=" flex justify-between w-full text-md text-gray-600">
+                                className=" flex justify-between w-full border-b transition-transform text-md text-gray-600">
                                 {sec.title}
-                                <span>{open === idx ? "-" : "+"}</span>
+                                <span>{open === idx ? <IoIosArrowUp /> : <IoIosArrowDown />}</span>
                             </button>
                             {open === idx && (
-                                <div className="flex flex-col gap-4">
-                                    {sec.data.map((item, i) => (
-                                        <Link className='text-white hover:underline' to={item.link} key={item.id}>
-                                            {item.title}
-                                        </Link>
-                                    ))}
+                                <div
+                                    className={`overflow-hidden transition-all duration-500 ease-in-out ${open === idx ? "max-h-40 opacity-100 mt-3" : "max-h-0 opacity-0"
+                                        }`}
+                                >
+                                    <div className="flex flex-col gap-4">
+                                        {sec.data.map((item, i) => (
+                                            <Link className='text-white hover:underline' to={item.link} key={item.id}>
+                                                {item.title}
+                                            </Link>
+                                        ))}
+                                    </div>
                                 </div>
                             )}
                         </div>
