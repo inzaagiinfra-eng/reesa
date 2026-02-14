@@ -27,11 +27,11 @@ const Banner2 = () => {
         <div className=''>
            
             {ban.map((item, index) => (
-                <div key={item.id} className='relative md:my-16 max-md:my-6 min-h-[60vh] md:min-h-screen overflow-hidden'>
+                <div key={item.id} className='relative md:my-16 max-sm:my-4  sm:my-6 min-h-[60vh] md:min-h-screen overflow-hidden'>
                     <img  className='w-full  absolute md:h-full max-md:h-96  object-cover top-0' src={item.img}></img>
                     <div className='flex  flex-col justify-between text-center  w-full absolute  z-10  bottom-16 items-center'>
 
-                        <div className=' lg:mt-6 max-lg:mt-2 lg:space-y-12 max-lg:space-y-4 flex justify-center flex-col items-center tracking-widest mb-6  text-center  font-semibold  '>
+                        <div className=' lg:mt-6 max-lg:mt-2 lg:space-y-12 max-sm:space-y-2 sm:space-y-4 flex justify-center flex-col items-center tracking-widest mb-6  text-center  font-semibold  '>
                             <h1 className='text-white lg:text-4xl max-lg:text-2xl'>{item.title}</h1>
                             <Link to={item.link} className='text-white border border-white  max-md:py-2 max-md:px-6 md:py-3 md:px-10 lg:text-lg max-lg:text-sm'>EXPLORE</Link>
                         </div>

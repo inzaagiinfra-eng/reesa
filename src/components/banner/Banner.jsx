@@ -25,20 +25,16 @@ const ban = [
 const Banner = () => {
     return (
         <div>
-            {/* Quote */}
             <div className="flex justify-center my-4 md:my-12">
                 <p className="text-center text-sm md:text-xl">
                     “For culture to be relevant, it needs to be dynamic.”
                 </p>
             </div>
-
             {ban.map((item) => (
                 <div
                     key={item.id}
-                    className="relative w-full  my-6 md:my-16
- min-h-[60vh] md:min-h-screen overflow-hidden"
+                    className="relative w-full  my-6 md:my-16 min-h-[60vh] md:min-h-screen overflow-hidden"
                 >
-
                     <img
                         src={item.img}
                         alt={item.title}

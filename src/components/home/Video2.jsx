@@ -16,8 +16,8 @@ const Banner = () => {
         <div className=''>
          
             {vid.map((item, index) => (
-                <div key={item.id} className='relative md:my-16   h-screen overflow-hidden'>
-                    <video autoPlay loop playsInline muted className='w-full  absolute md:h-full max-md:h-[160vw]  object-cover top-0' src={item.video}></video>
+                <div key={item.id} className='relative h-screen lg:mt-12 sm:mt-6 max-sm:mt-4 overflow-hidden'>
+                    <video autoPlay loop playsInline muted className='absolute inset-0 w-full h-full object-cover' src={item.video}></video>
                     <div className='flex  flex-col justify-between text-center  w-full absolute  z-10  bottom-16 items-center'>
 
                         <div className=' lg:mt-6 max-lg:mt-2 lg:space-y-12 max-lg:space-y-4 flex justify-center flex-col items-center tracking-widest mb-6  text-center  font-semibold  '>

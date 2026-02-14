@@ -24,29 +24,61 @@ const vid = [
 
 const Banner = () => {
     return (
-        <div className=''>
+        <div className='space-y-4'>
 
-            {vid.map((item, index) => (
-                <div key={item.id} className='relative max-md:my-6 md:my-16  h-screen overflow-hidden'>
-                    <video autoPlay loop playsInline muted className='w-full  absolute md:h-full max-md:h-[160vw]  object-cover top-0' src={item.video}></video>
-                    <div className='flex  flex-col justify-between text-center  w-full absolute  z-10  bottom-16 items-center'>
+            {vid.map((item) => (
+                <div key={item.id} className='relative h-screen  overflow-hidden'>
 
-                        <div className=' lg:mt-6 max-lg:mt-2 lg:space-y-12 max-lg:space-y-4 flex justify-center flex-col items-center tracking-widest mb-6  text-center  font-semibold  '>
-                            <h1 className='text-white lg:text-4xl max-lg:text-2xl'>{item.title}</h1>
-                            <Link to={item.link} className='text-white border border-white  max-md:py-2 max-md:px-6 md:py-3 md:px-10 lg:text-lg max-lg:text-sm'>EXPLORE</Link>
+                    <video
+                        autoPlay
+                        loop
+                        playsInline
+                        muted
+                        className='absolute inset-0 w-full h-full object-cover'
+                        src={item.video}
+                    />
+
+                    <div className='absolute inset-0 flex flex-col justify-end items-center text-center z-10 pb-16'>
+                        <div className='space-y-6 font-semibold tracking-widest'>
+                            <h1 className='text-white text-2xl lg:text-4xl'>
+                                {item.title}
+                            </h1>
+                            <Link
+                                to={item.link}
+                                className='text-white border border-white py-2 px-6 lg:py-3 lg:px-10 text-sm lg:text-lg'
+                            >
+                                EXPLORE
+                            </Link>
                         </div>
                     </div>
+
                 </div>
             ))}
-            <div className='relative max-md:my-6 md:my-16 min-h-[60vh] md:min-h-screen overflow-hidden'>
-                <img className='w-full  absolute md:h-full max-md:h-96  object-cover top-0' src="/banners/banner7.webp" />
-                <div className='flex  flex-col justify-between text-center  w-full absolute  z-10  bottom-16 items-center'>
 
-                    <div className=' lg:mt-6 max-lg:mt-2 lg:space-y-12 max-lg:space-y-4 flex justify-center flex-col items-center tracking-widest mb-6  text-center  font-semibold  '>
-                        <h1 className='text-white lg:text-4xl max-lg:text-2xl'>BRIDAL COUTURE 2024</h1>
-                        <Link className='text-white border border-white  max-md:py-2 max-md:px-6 md:py-3 md:px-10 lg:text-lg max-lg:text-sm'>EXPLORE</Link>
+            {/* Image Banner Section */}
+
+            <div className='relative min-h-screen overflow-hidden'>
+
+                <img
+                    src="/banners/banner7.webp"
+                    alt="banner"
+                    className='absolute inset-0 w-full h-full object-cover'
+                />
+
+                <div className='absolute inset-0 flex flex-col justify-end items-center text-center z-10 pb-16'>
+                    <div className='space-y-6 font-semibold tracking-widest'>
+                        <h1 className='text-white text-2xl lg:text-4xl'>
+                            BRIDAL COUTURE 2024
+                        </h1>
+                        <Link
+                            to="/"
+                            className='text-white border border-white py-2 px-6 lg:py-3 lg:px-10 text-sm lg:text-lg'
+                        >
+                            EXPLORE
+                        </Link>
                     </div>
                 </div>
+
             </div>
 
         </div>
