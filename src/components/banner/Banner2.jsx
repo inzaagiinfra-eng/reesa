@@ -24,26 +24,56 @@ const ban = [
 
 const Banner2 = () => {
     return (
-        <div className=''>
-           
-            {ban.map((item, index) => (
-                <div key={item.id} className='relative md:my-16 max-sm:my-4  sm:my-6 min-h-[60vh] md:min-h-screen overflow-hidden'>
-                    <img  className='w-full  absolute md:h-full max-md:h-96  object-cover top-0' src={item.img}></img>
-                    <div className='flex  flex-col justify-between text-center  w-full absolute  z-10  bottom-16 items-center'>
+        <div>
 
-                        <div className=' lg:mt-6 max-lg:mt-2 lg:space-y-12 max-sm:space-y-2 sm:space-y-4 flex justify-center flex-col items-center tracking-widest mb-6  text-center  font-semibold  '>
-                            <h1 className='text-white lg:text-4xl max-lg:text-2xl'>{item.title}</h1>
-                            <Link to={item.link} className='text-white border border-white  max-md:py-2 max-md:px-6 md:py-3 md:px-10 lg:text-lg max-lg:text-sm'>EXPLORE</Link>
+            {ban.map((item) => (
+                <div
+                    key={item.id}
+                    className='relative min-h-screen overflow-hidden my-6 md:my-16'
+                >
+
+                    <img
+                        src={item.img}
+                        alt={item.title}
+                        className='absolute inset-0 w-full h-full object-cover'
+                    />
+
+                    <div className='absolute inset-0 flex flex-col justify-end items-center text-center z-10 pb-16'>
+                        <div className='space-y-4 lg:space-y-8 font-semibold tracking-widest'>
+                            <h1 className='text-white text-2xl lg:text-4xl'>
+                                {item.title}
+                            </h1>
+
+                            <Link
+                                to={item.link}
+                                className='text-white border border-white py-2 px-6 lg:py-3 lg:px-10 text-sm lg:text-lg'
+                            >
+                                EXPLORE
+                            </Link>
                         </div>
                     </div>
+
                 </div>
             ))}
-            <div className='flex flex-col justify-center items-center lg:gap-8 lg:py-4 px-2 text-center lg:px-[30vw]'>
-                <p>“Crowded narrow lanes with balconies jutting out of beautiful old mansions and homes, jostling for space in North Calcutta. So rich in its nonchalance, between the clamour of grandeur and decay. It’s almost spiritual, the neglect of luxury and the casual existence of glamour. It makes Calcutta unforgettable.”</p>
-                <img src="/icons/animal.png" className='w-14 h-14' alt="animal"/>
 
+            {/* Text Section */}
+
+            <div className='flex flex-col justify-center items-center gap-6 py-10 px-4 text-center lg:px-[30vw]'>
+                <p>
+                    “Crowded narrow lanes with balconies jutting out of beautiful old mansions and homes,
+                    jostling for space in North Calcutta. So rich in its nonchalance,
+                    between the clamour of grandeur and decay. It’s almost spiritual,
+                    the neglect of luxury and the casual existence of glamour.
+                    It makes Calcutta unforgettable.”
+                </p>
+
+                <img
+                    src="/icons/animal.png"
+                    className='w-14 h-14'
+                    alt="animal"
+                />
             </div>
-            
+
         </div>
     )
 }
